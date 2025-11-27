@@ -1,0 +1,1150 @@
+            <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montano Iron Factory - Montaggio Infissi e Lavorazioni in Ferro</title>
+    <style>
+        .service-grid {
+                grid-template-columns: 1fr;
+            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #5B8FE5;
+            --primary-dark: #4A7BCF;
+            --gold: #D4AF37;
+            --dark-bg: #1A2332;
+            --darker-bg: #141B28;
+            --card-bg: #222D3E;
+            --text-light: #E8ECEF;
+            --text-muted: #9BA5B3;
+            --border: #2D3748;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background: var(--darker-bg);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark-bg);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .company-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.75rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 85vh;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(91, 143, 229, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(91, 143, 229, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(91, 143, 229, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 7rem 3rem;
+            background: var(--darker-bg);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-subtitle {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .section-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Carousel */
+        .carousel-section {
+            padding: 7rem 3rem;
+            background: var(--dark-bg);
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 600px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(91, 143, 229, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            margin: 0 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 7rem 3rem;
+            background: var(--darker-bg);
+        }
+
+        .contact-wrapper {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-section {
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-info-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .info-value a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-value a:hover {
+            color: var(--primary);
+        }
+
+        .info-value .phone-number {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value .phone-number:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 4rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary);
+            align-self: flex-start;
+        }
+
+        .cta-section .btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-company {
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-legal {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.7rem;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+
+        .footer-legal a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-activity {
+            font-size: 0.98rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                padding: 0 0.2rem;
+            }
+            .footer-company {
+                font-size: 1rem;
+            }
+            .footer-legal {
+                font-size: 0.85rem;
+            }
+            .footer-activity {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+/* --- STILE MENU DESKTOP --- */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+/* Nascondiamo il bottone galleggiante su PC */
+.floating-burger {
+    display: none;
+}
+
+/* --- STILE MOBILE --- */
+@media (max-width: 768px) {
+    
+    /* 1. IL BOTTONE GALLEGGIANTE (Cerchio) */
+    .floating-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        position: fixed; /* Fisso sullo schermo */
+        bottom: 30px;    /* Distanza dal basso (puoi mettere top: 20px se lo vuoi in alto) */
+        right: 30px;     /* Distanza da destra */
+        
+        width: 60px;     /* Grandezza del cerchio */
+        height: 60px;
+        
+        background-color: var(--primary); /* Colore Blu */
+        border-radius: 50%; /* Lo rende rotondo */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* Ombra per profondità */
+        
+        z-index: 2000;   /* Sopra a tutto, anche al menu aperto */
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Effetto quando lo premi */
+    .floating-burger:active {
+        transform: scale(0.9);
+    }
+
+    /* Le linee dentro il cerchio */
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    /* 2. IL MENU A TUTTO SCHERMO */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Tutto lo schermo */
+        background: rgba(20, 27, 40, 0.98); /* Sfondo scuro quasi opaco */
+        
+        flex-direction: column;
+        justify-content: center; /* Centra i link verticalmente */
+        align-items: center;
+        gap: 2.5rem;
+        
+        transform: translateY(100%); /* Nascosto giù */
+        transition: transform 0.4s ease-in-out;
+        z-index: 1500; /* Sotto al bottone, sopra al sito */
+    }
+
+    /* Classe per mostrare il menu */
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem; /* Link più grandi */
+        font-weight: 700;
+        color: white;
+    }
+
+    /* 3. ANIMAZIONE BURGER -> X */
+    .floating-burger.active {
+        background-color: var(--gold); /* Cambia colore quando aperto (opzionale) */
+        transform: rotate(90deg);
+    }
+
+    .floating-burger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .floating-burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .floating-burger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav {
+        /* Aumentiamo leggermente l'altezza per ospitare il logo più grande */
+        height: 70px !important; 
+        padding: 0 1.5rem !important;
+    }
+
+    .logo img {
+        /* Ingrandiamo il logo (era 35px, ora 50px è leggibile) */
+        height: 48px !important; 
+        width: auto;
+    }
+
+    /* 2. HERO SECTION: Tiriamo tutto su */
+    .hero {
+        /* FONDAMENTALE: Togliamo il display:flex che centra verticalmente */
+        display: block !important; 
+        
+        /* Togliamo l'altezza minima che forzava lo schermo intero */
+        min-height: auto !important; 
+        
+        /* Riduciamo il padding superiore. 
+           90px bastano per non finire sotto l'header (che è alto 70px) */
+        padding-top: 90px !important; 
+        
+        padding-bottom: 3rem;
+    }
+
+    /* Assicuriamoci che il contenuto sia centrato orizzontalmente */
+    .hero-content {
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    .hero-subtitle {
+        margin-top: 1rem; /* Un po' di aria sopra il sottotitolo */
+    }
+}
+
+        /* Responsive */
+/* Sostituisci il vecchio blocco media query con questo */
+@media (max-width: 768px) {
+    /* 1. Sistemiamo il Menu: Logo sopra, Link sotto */
+    nav {
+        flex-direction: column; /* Impila verticalmente */
+        padding: 1rem !important;
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap; /* Permette ai link di andare a capo se necessario */
+        justify-content: center; /* Centra i link */
+        font-size: 0.9rem; /* Testo leggermente più piccolo */
+        padding: 0;
+    }
+
+    /* 2. Sistemiamo l'intestazione Hero */
+    .hero {
+        min-height: auto; /* Rimuove altezza fissa che crea spazi bianchi */
+        padding-top: 140px; /* Spazio per il menu che ora è più alto */
+        padding-bottom: 4rem;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem; /* Meno margini laterali */
+        text-align: center; /* Assicura che tutto sia centrato */
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem; /* Titolo più piccolo per non spezzare parole */
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%; /* Bottoni a tutta larghezza su mobile */
+        justify-content: center;
+    }
+
+    /* 3. CORREZIONE FONDAMENTALE: Le card dei servizi */
+    .service-grid {
+        /* Forza 1 colonna e toglie il limite dei 350px */
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    
+    /* Assicura che la card non sia mai più larga dello schermo */
+    .service-card {
+        width: 100%;
+        min-width: 0; /* Trucco CSS per evitare overflow nelle grid */
+    }
+
+    /* 4. Aggiustamento margini generali sezioni */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0; /* Il container non deve avere padding extra */
+        width: 100%;
+    }
+
+    .services,
+    .carousel-section,
+    .contact {
+        padding: 3rem 1.5rem; /* Margini laterali ridotti a 1.5rem (circa 24px) */
+    }
+
+
+    .carousel-container {
+        margin-top: 2rem;
+    }
+    
+    .carousel-item {
+        height: 300px; /* Carosello più basso su mobile */
+    }
+
+    /* 1. Mette i due box uno sotto l'altro invece che affiancati */
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* 2. Riduce drasticamente il padding interno (da 4rem a 1.5rem) */
+    .contact-info-section,
+    .cta-section {
+        padding: 1.5rem !important;
+    }
+
+    /* 3. Sistema le righe interne (Telefono, Email, ecc) */
+    .info-row {
+        /* Invece di avere etichetta a sinistra e valore a destra, li impila */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Allinea a sinistra */
+        gap: 0.5rem;
+        text-align: left;
+    }
+
+    /* Rende l'etichetta (es. "EMAIL") più piccola e discreta */
+    .info-label {
+        font-size: 0.8rem;
+        color: var(--primary); /* Opzionale: la colora per distinguerla */
+        margin-bottom: 0;
+    }
+
+    /* 4. Evita che l'email lunga "rompa" il layout uscendo dal bordo */
+    .info-value {
+        font-size: 1rem;
+        word-break: break-all; /* Spezza l'email se è troppo lunga */
+    }
+
+    /* Sistema il titolo del box blu */
+    .cta-section h3 {
+        font-size: 1.5rem;
+    }
+}    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Montano Iron Factory Logo" style="height: 50px; width: auto;">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#lavori">Portfolio</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="floating-burger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+
+
+<section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">ECCELLENZA NEL SETTORE</div>
+            <h1>Montaggio Infissi<br>e Carpenteria Metallica</h1>
+            <p>Specializzati nell'installazione professionale di infissi e nella realizzazione di strutture in ferro su misura. Qualità, precisione e affidabilità dal 2005.</p>
+            <div class="cta-buttons">
+                <a href="mailto:montanoironfactory@gmail.com?subject=Richiesta Preventivo Gratuito&body=Buongiorno, vorrei ricevere un preventivo gratuito per:" class="btn btn-primary">Richiedi Preventivo</a>
+                <a href="#contatti" class="btn btn-secondary">Contattaci</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">SERVIZI INFISSI</div>
+                <h2 class="section-title">Installazione e Fornitura Infissi</h2>
+                <p class="section-description">Specializzati nel montaggio professionale di serramenti con attenzione al dettaglio e alle prestazioni energetiche.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span class="service-number">01</span>
+                    <h3>Montaggio Infissi</h3>
+                    <p>Installazione professionale di finestre, porte e serramenti di ogni tipo. Precisione millimetrica e attenzione ai dettagli per garantire isolamento termico e acustico ottimale.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">02</span>
+                    <h3>Fornitura Infissi</h3>
+                    <p>Ampia selezione di infissi di qualità certificata. Consulenza personalizzata per scegliere i prodotti più adatti alle tue esigenze specifiche, con le migliori marche del settore.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">03</span>
+                    <h3>Assistenza e Manutenzione</h3>
+                    <p>Servizio di assistenza tecnica completo per la manutenzione, riparazione e sostituzione di infissi esistenti. Interventi rapidi ed efficaci per risolvere ogni problema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: var(--dark-bg);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">CARPENTERIA METALLICA</div>
+                <h2 class="section-title">Lavorazioni in Ferro</h2>
+                <p class="section-description">Realizzazione di strutture metalliche su misura con tecniche artigianali e materiali di prima qualità.</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span class="service-number">04</span>
+                    <h3>Porte in Ferro</h3>
+                    <p>Progettazione e realizzazione di porte in ferro su misura, sia per interni che esterni. Design personalizzato, robustezza e sicurezza certificate.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">05</span>
+                    <h3>Inferriate di Sicurezza</h3>
+                    <p>Progettazione e installazione di inferriate di sicurezza per finestre e porte. Protezione affidabile senza compromettere l'estetica dell'edificio.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">06</span>
+                    <h3>Ringhiere e Cancelli</h3>
+                    <p>Lavorazioni complete in ferro: ringhiere per scale e balconi, cancelli, recinzioni e qualsiasi struttura metallica personalizzata con tecniche artigianali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lavori" class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">PORTFOLIO</div>
+                <h2 class="section-title">I nostri lavori</h2>
+                <p class="section-description">Scopri alcuni dei nostri lavori di installazione infissi e carpenteria metallica</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="carouselUnificato">
+                    <div class="carousel-item">Caricamento immagini...</div>
+                </div>
+                <button class="carousel-nav prev" onclick="moveCarouselUnificato(-1)">‹</button>
+                <button class="carousel-nav next" onclick="moveCarouselUnificato(1)">›</button>
+            </div>
+            <div class="carousel-dots" id="dotsUnificato"></div>
+        </div>
+    </section>
+
+    <section id="contatti" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">CONTATTI</div>
+                <h2 class="section-title">Parliamo del Tuo Progetto</h2>
+                <p class="section-description">Siamo a tua disposizione per qualsiasi informazione o preventivo gratuito</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <h3>Informazioni di Contatto</h3>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Telefono</div>
+                        <div class="info-value">
+                            <a href="tel:+39 351 6215552" class="phone-number">+39 351 621 5552</a>
+                            <a href="tel:+39 328 1439383" class="phone-number">+39 328 143 9383</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">
+                            <a href="mailto:montanoironfactory@gmail.com">montanoironfactory@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label">Sede</div>
+                        <div class="info-value">
+                            Quarrata, Toscana
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Richiedi un Preventivo Gratuito</h3>
+                    <p>Hai bisogno di un preventivo per il tuo progetto? Contattaci senza impegno. Il nostro team ti risponderà entro 24 ore con una consulenza personalizzata.</p>
+                    <a href="mailto:montanoironfactory@gmail.com?subject=Richiesta Preventivo&body=Buongiorno,%0D%0A%0D%0AVorrei ricevere un preventivo per:%0D%0A%0D%0ATipo di lavoro:%0D%0ADettagli:%0D%0AIndirizzo:%0D%0A%0D%0AContatto telefonico:%0D%0A%0D%0AGrazie" class="btn">Invia Richiesta Preventivo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-company">&copy; 2025 Montano Iron Factory SNC</p>
+            <p class="footer-legal">
+                Sede legale: Via Castello Biagini 44/1, 51039 Quarrata (PT), Italia<br>
+                P.IVA/C.F.: 02113940478 &nbsp;|&nbsp; <br>
+                Email: <a href="mailto:montanoironfactory@gmail.com">montanoironfactory@gmail.com</a> &nbsp;|&nbsp; Tel: <a href="tel:+393516215552">351 621 5552</a><br>
+                Tutti i diritti riservati.
+            </p>
+            <p class="footer-activity">Montaggio Infissi • Carpenteria Metallica • Quarrata, Toscana</p>
+        </div>
+    </footer>
+
+    
+
+    <script>
+
+// --- SCRIPT PER IL BURGER GALLEGGIANTE ---
+    const burgerBtn = document.querySelector(".floating-burger");
+    const navMenu = document.querySelector(".nav-links");
+
+    if(burgerBtn) {
+        burgerBtn.addEventListener("click", () => {
+            burgerBtn.classList.toggle("active");
+            navMenu.classList.toggle("active");
+            
+            // Opzionale: Blocca lo scroll della pagina sotto quando il menu è aperto
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Chiude il menu quando clicchi un link
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            burgerBtn.classList.remove("active");
+            navMenu.classList.remove("active");
+            document.body.style.overflow = 'auto'; // Riabilita lo scroll
+        }));
+    }
+
+    // --- CONFIGURAZIONE IMMAGINI ---
+    // Scrivi qui i nomi dei file che hai messo nelle rispettive cartelle.
+    // Il percorso base sarà aggiunto automaticamente.
+    
+    const immaginiInfissi = [
+        // Inserisci qui solo i file realmente presenti in img/infissi/
+    ];
+
+    const immaginiFerro = [
+        '0c93b395-f15d-4696-bc43-b9de87c20f38.jpg',
+        '1.jpg',
+        'eaa73f29-9acd-4e23-9c7a-18340dc11fac.jpg',
+        'Immagine-WhatsApp-2023-04-16-ore-08.54.14-650x430.png',
+        'Immagine-WhatsApp-2023-05-12-ore-14.05.51-300x300.png',
+        'Immagine-WhatsApp-2023-12-01-ore-17.48.13_8f4197c6-650x430.png',
+        'Immagine-WhatsApp-2023-12-01-ore-17.49.04_ff44e501-650x430.png',
+        'WhatsApp-Image-2022-08-27-at-19.48.36-4.jpeg',
+        'WhatsApp-Image-2022-08-27-at-20.15.59-1.jpeg',
+        'WhatsApp-Image-2022-08-27-at-20.15.59-4.jpeg',
+        'WhatsApp-Image-2022-09-01-at-15.57.49-10-650x430.webp',
+        'WhatsApp-Image-2022-09-01-at-15.57.49-10.jpeg',
+        'WhatsApp-Image-2022-09-01-at-15.57.49-2.jpeg',
+        'WhatsApp-Image-2022-09-01-at-15.57.49-9-1024x800.png',
+        'WhatsApp-Image-2022-09-01-at-15.57.49.png',
+        'WhatsApp-Image-2022-09-01-at-15.57.50-1-300x300.png',
+        'WhatsApp-Image-2022-09-01-at-15.57.50-300x300.png',
+        'WhatsApp-Image-2022-09-04-at-21.50.09-1.jpeg',
+    ];
+
+    // Unifica le immagini dei due array in uno solo
+    const immaginiPortfolio = [
+        ...immaginiInfissi.map(f => ({ file: f, folder: 'img/infissi/' })),
+        ...immaginiFerro.map(f => ({ file: f, folder: 'assets/carousels/carousel2/' }))
+    ];
+
+    // --- NON TOCCARE DA QUI IN GIÙ ---
+
+    // --- CAROSELLO UNIFICATO ---
+    let posizioneUnificato = 0;
+
+    function inizializzaCaroselloUnificato() {
+        generaSlideUnificato();
+        createDotsUnificato();
+        updateDotsUnificato();
+    }
+
+    function generaSlideUnificato() {
+        const container = document.getElementById('carouselUnificato');
+        if (immaginiPortfolio.length === 0) {
+            container.innerHTML = '<div class="carousel-item">Nessuna immagine</div>';
+            return;
+        }
+        let html = '';
+        immaginiPortfolio.forEach(obj => {
+            html += `
+                <div class="carousel-item" style="background-image: url('${obj.folder + obj.file}'); background-size: cover; background-position: center;"></div>
+            `;
+        });
+        container.innerHTML = html;
+        aggiornaPosizioneUnificato();
+    }
+
+    function moveCarouselUnificato(direction) {
+        posizioneUnificato += direction;
+        if (posizioneUnificato < 0) posizioneUnificato = immaginiPortfolio.length - 1;
+        if (posizioneUnificato >= immaginiPortfolio.length) posizioneUnificato = 0;
+        aggiornaPosizioneUnificato();
+        updateDotsUnificato();
+    }
+
+    function aggiornaPosizioneUnificato() {
+        const container = document.getElementById('carouselUnificato');
+        container.style.transform = `translateX(-${posizioneUnificato * 100}%)`;
+    }
+
+    function createDotsUnificato() {
+        const dotsContainer = document.getElementById('dotsUnificato');
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < immaginiPortfolio.length; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.onclick = () => goToSlideUnificato(i);
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateDotsUnificato() {
+        const dots = document.querySelectorAll('#dotsUnificato .dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === posizioneUnificato);
+        });
+    }
+
+    function goToSlideUnificato(slideIndex) {
+        posizioneUnificato = slideIndex;
+        aggiornaPosizioneUnificato();
+        updateDotsUnificato();
+    }
+
+    function autoSlideUnificato() {
+        moveCarouselUnificato(1);
+    }
+
+    // Avvio
+    inizializzaCaroselloUnificato();
+    setInterval(autoSlideUnificato, 5000);
+
+    // Smooth scroll menu
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
