@@ -54,6 +54,25 @@
             padding: 0 3rem;
         }
 
+        .admin-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .admin-link:hover {
+            opacity: 1;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -1000,6 +1019,10 @@
                 Tutti i diritti riservati.
             </p>
             <p class="footer-activity">Montaggio Infissi • Carpenteria Metallica • Quarrata, Toscana</p>
+
+            <!-- Pulsante Area Riservata -->
+            <a href="https://gestionale.montanoironfactory.com" class="admin-link" target="_blank">Area Riservata</a>
+
         </div>
     </footer>
 
