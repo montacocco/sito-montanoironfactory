@@ -105,6 +105,15 @@ export function IconDocument(props: IconProps) {
   );
 }
 
+export function IconAward(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <circle cx="12" cy="9" r="5.5" />
+      <path d="M9 13.5L7.5 21l4.5-2.5L16.5 21 15 13.5" />
+    </svg>
+  );
+}
+
 export function IconCheck(props: IconProps) {
   return (
     <svg {...base(props)}>

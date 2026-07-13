@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { IconArrowRight } from "./Icons";
+import { IconArrowRight, IconAward } from "./Icons";
 import { asset } from "@/lib/assets";
 import { site } from "@/lib/site";
 
@@ -127,6 +127,19 @@ export default function Hero() {
               Le nostre soluzioni
             </a>
           </motion.div>
+
+          <motion.p
+            variants={item}
+            className="mt-9 inline-flex items-center gap-3 text-[15px] font-semibold text-white"
+          >
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-accent-400/40 bg-accent-400/15 text-accent-400">
+              <IconAward width={20} height={20} />
+            </span>
+            <span>
+              Posatori certificati{" "}
+              <span className="text-accent-400">UNI 11673-2</span>
+            </span>
+          </motion.p>
         </motion.div>
 
         {/* Indicatori slide */}

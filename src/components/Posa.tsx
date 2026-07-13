@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-import { IconRuler, IconShield, IconWindow, IconWrench, IconCheck } from "./Icons";
+import { IconRuler, IconShield, IconWindow, IconWrench, IconCheck, IconAward } from "./Icons";
 
 const regole = [
   {
@@ -31,6 +31,7 @@ const venditori = [
 ];
 
 const posatori = [
+  "Posa eseguita da installatori certificati UNI 11673-2",
   "In cantiere c'è chi risponde del lavoro, dall'inizio alla fine",
   "La posa è il cuore del preventivo, non un accessorio",
   "Nessun catalogo da piazzare: ti consigliamo solo ciò che monteremmo a casa nostra",
@@ -93,6 +94,31 @@ export default function Posa() {
                 cambiato gli infissi. E la garanzia del produttore non copre
                 gli errori di posa.
               </p>
+            </div>
+            <div className="relative mt-5 overflow-hidden rounded-md border border-accent-500/30 bg-zinc-950 p-6 sm:p-7">
+              <div
+                className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-accent-500/20 blur-[70px]"
+                aria-hidden
+              />
+              <div className="relative flex items-start gap-4 sm:gap-5">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-sm bg-accent-500 text-zinc-950 shadow-lg shadow-accent-500/30 sm:h-14 sm:w-14">
+                  <IconAward width={28} height={28} strokeWidth={2} />
+                </span>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-400">
+                    Certificazione
+                  </p>
+                  <p className="mt-1.5 font-[family-name:var(--font-display)] text-lg font-bold leading-snug text-white sm:text-xl">
+                    Posatori certificati UNI 11673-2
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                    La norma nazionale che certifica conoscenze, abilità e
+                    competenze di chi posa i serramenti. A montare a casa tua
+                    non c&apos;è una squadra qualunque: c&apos;è un installatore
+                    qualificato.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
 
