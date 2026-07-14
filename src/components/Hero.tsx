@@ -8,19 +8,19 @@ import { site } from "@/lib/site";
 
 const slides = [
   {
-    src: asset("/images/hero-2.jpg"),
+    src: asset("/images/hero-2.webp"),
     alt: "Villa moderna con grandi vetrate al tramonto",
   },
   {
-    src: asset("/images/hero-1.jpg"),
+    src: asset("/images/hero-1.webp"),
     alt: "Soggiorno moderno con scorrevoli in alluminio nero",
   },
   {
-    src: asset("/images/hero-3.jpg"),
+    src: asset("/images/hero-3.webp"),
     alt: "Casa moderna con facciata in legno e vetro",
   },
   {
-    src: asset("/images/kitchen-1.jpg"),
+    src: asset("/images/kitchen-1.webp"),
     alt: "Ingresso moderno con porta in legno e rivestimento scuro",
   },
 ];
@@ -94,7 +94,7 @@ export default function Hero() {
             variants={item}
             className="max-w-3xl font-[family-name:var(--font-display)] text-4xl font-bold leading-[1.08] text-white sm:text-6xl lg:text-7xl"
           >
-            Infissi montati
+            Infissi montati{" "}
             <br />
             <span className="text-accent-400">a regola d&rsquo;arte.</span>
           </motion.h1>

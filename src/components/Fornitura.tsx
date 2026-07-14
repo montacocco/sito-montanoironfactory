@@ -64,7 +64,7 @@ export default function Fornitura() {
             <Reveal delay={0.1}>
               <div className="relative overflow-hidden rounded-md">
                 <img
-                  src={asset("/images/hero-3.jpg")}
+                  src={asset("/images/hero-3.webp")}
                   alt="Casa moderna con ampie vetrate e rivestimento in legno"
                   loading="lazy"
                   className="aspect-[16/11] w-full object-cover"

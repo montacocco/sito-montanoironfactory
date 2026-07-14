@@ -7,7 +7,7 @@ export default function CtaBand() {
   return (
     <section className="relative overflow-hidden">
       <img
-        src={asset("/images/hero-2.jpg")}
+        src={asset("/images/hero-2.webp")}
         alt=""
         aria-hidden
         loading="lazy"

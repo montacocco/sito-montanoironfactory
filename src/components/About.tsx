@@ -27,7 +27,7 @@ export default function About() {
             <div className="relative">
               <div className="overflow-hidden rounded-md">
                 <img
-                  src={asset("/images/interior-1.jpg")}
+                  src={asset("/images/interior-1.webp")}
                   alt="Scala con ringhiera in ferro battuto realizzata su misura"
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover sm:aspect-[3/3.2]"

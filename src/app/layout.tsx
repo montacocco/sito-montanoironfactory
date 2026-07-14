@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Montano Iron Factory — Montaggio Infissi e Lavorazioni in Ferro | Quarrata (PT)",
   description:
     "Montaggio professionale di infissi, fornitura su richiesta e lavorazioni in ferro su misura a Quarrata, Pistoia e in tutta la Toscana. L'esperienza artigiana del ferro dal 2005, la stessa precisione nei serramenti.",
+  // 1. AGGIUNGI L'URL UFFICIALE (Serve a Google per evitare problemi di contenuti duplicati)
+  metadataBase: new URL('https://montanoironfactory.com'),
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     "montaggio infissi",
     "infissi Quarrata",
@@ -29,6 +34,7 @@ export const metadata: Metadata = {
     title: "Montano Iron Factory — Montaggio Infissi e Lavorazioni in Ferro",
     description:
       "Montaggio professionale di infissi e lavorazioni in ferro su misura a Quarrata (PT). Artigiani del ferro dal 2005.",
+    url: 'https://montanoironfactory.com', // 2. AGGIUNGI L'URL ANCHE QUI
     locale: "it_IT",
     type: "website",
   },

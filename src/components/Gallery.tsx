@@ -8,43 +8,43 @@ import { asset } from "@/lib/assets";
 
 const slides = [
   {
-    src: "/images/hero-1.jpg",
+    src: "/images/hero-1.webp",
     alt: "Soggiorno con scorrevoli alzanti in alluminio nero",
     caption: "Posa in opera di scorrevoli alzanti",
     detail: "Movimentazione, messa in bolla e regolazione di ante di grandi dimensioni",
   },
   {
-    src: "/images/house-2.jpg",
+    src: "/images/house-2.webp",
     alt: "Casa di campagna con finestre bianche al tramonto",
     caption: "Sostituzione infissi su case esistenti",
     detail: "Smontaggio dei vecchi serramenti e posa dei nuovi senza opere murarie",
   },
   {
-    src: "/images/interior-1.jpg",
+    src: "/images/interior-1.webp",
     alt: "Scala interna con ringhiera in ferro battuto nero",
     caption: "Installazione di ringhiere in ferro",
     detail: "Realizzazione artigianale, fissaggi strutturali e finitura in opera",
   },
   {
-    src: "/images/hero-2.jpg",
+    src: "/images/hero-2.webp",
     alt: "Villa moderna con grandi vetrate illuminate al tramonto",
     caption: "Montaggio di vetrate panoramiche",
     detail: "Posa certificata per tenuta ad aria, acqua e vento",
   },
   {
-    src: "/images/interior-5.jpg",
+    src: "/images/interior-5.webp",
     alt: "Facciata vetrata con serramenti in alluminio",
     caption: "Posa di serramenti in alluminio",
     detail: "Sigillature a norma e nastri per l'isolamento del giunto",
   },
   {
-    src: "/images/kitchen-1.jpg",
+    src: "/images/kitchen-1.webp",
     alt: "Ingresso moderno con porta in legno",
     caption: "Installazione di porte d'ingresso",
     detail: "Blindati, portoncini e porte su misura, con cura delle finiture",
   },
   {
-    src: "/images/house-1.jpg",
+    src: "/images/house-1.webp",
     alt: "Villa minimale bianca con infissi a scomparsa",
     caption: "Montaggio su nuove costruzioni",
     detail: "Coordinamento con l'impresa e posa su controtelaio",

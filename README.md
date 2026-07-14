@@ -56,7 +56,7 @@ attivazione una sola volta e da lì in poi i messaggi arrivano normalmente.
 
 ## Aggiungere un lavoro al portfolio
 
-1. Copia le foto in `public/images/lavori/` (es. `cantiere-verdi-1.jpg`)
+1. Copia le foto in `public/images/lavori/` (es. `cantiere-verdi-1.webp`)
 2. Apri `src/lib/progetti.ts` e aggiungi una voce all'array seguendo gli
    esempi già presenti (titolo, luogo, anno, categoria, descrizione, foto)
 3. Fai il push: il sito si aggiorna da solo
@@ -70,13 +70,13 @@ Le foto in `public/images/` provengono da [Unsplash](https://unsplash.com) e
 sono usate secondo la [Unsplash License](https://unsplash.com/license)
 (uso commerciale consentito, nessuna attribuzione obbligatoria):
 
-- `hero-1.jpg` — unsplash.com/photos/1600607687939-ce8a6c25118c
-- `hero-2.jpg` — unsplash.com/photos/1600585154340-be6161a56a0c
-- `hero-3.jpg` — unsplash.com/photos/1600566753190-17f0baa2a6c3
-- `house-1.jpg` — unsplash.com/photos/1523217582562-09d0def993a6
-- `house-2.jpg` — unsplash.com/photos/1449844908441-8829872d2607
-- `house-3.jpg` — unsplash.com/photos/1416331108676-a22ccb276e35
-- `interior-1.jpg` — unsplash.com/photos/1502005229762-cf1b2da7c5d6
-- `interior-2.jpg` — unsplash.com/photos/1513694203232-719a280e022f
-- `interior-5.jpg` — unsplash.com/photos/1600573472592-401b489a3cdc
-- `kitchen-1.jpg` — unsplash.com/photos/1600585154526-990dced4db0d
+- `hero-1.webp` — unsplash.com/photos/1600607687939-ce8a6c25118c
+- `hero-2.webp` — unsplash.com/photos/1600585154340-be6161a56a0c
+- `hero-3.webp` — unsplash.com/photos/1600566753190-17f0baa2a6c3
+- `house-1.webp` — unsplash.com/photos/1523217582562-09d0def993a6
+- `house-2.webp` — unsplash.com/photos/1449844908441-8829872d2607
+- `house-3.webp` — unsplash.com/photos/1416331108676-a22ccb276e35
+- `interior-1.webp` — unsplash.com/photos/1502005229762-cf1b2da7c5d6
+- `interior-2.webp` — unsplash.com/photos/1513694203232-719a280e022f
+- `interior-5.webp` — unsplash.com/photos/1600573472592-401b489a3cdc
+- `kitchen-1.webp` — unsplash.com/photos/1600585154526-990dced4db0d
